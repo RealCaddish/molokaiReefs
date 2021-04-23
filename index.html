@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset=utf-8 />
+    <title>Moloka'i's Reef System</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,900i" rel="stylesheet">
+
+    <style>
+        /* UK Colors: 
+            #c7c9c8 light gray 
+            #63666a dark gray
+            #15397f dark blue
+            #009bda light blue
+            #0033a0 official blue
+        */
+        body {
+            margin: 5%;
+            padding: 0;
+            background: #011127;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            color: #b6d463;
+            font-size: 1.1em;
+
+        }
+
+        section {
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        h1 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 900i;
+            font-size: 2.8em;
+            font-style: italic;
+            /* The em unit. 3x the current size */
+            letter-spacing: .01em;
+            margin: 0 0 15px 0;
+            text-align: center;
+            /* text-transform: uppercase; */
+        }
+
+        h2 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            color: #63666a;
+            font-size: 1.5em;
+            letter-spacing: .06em;
+            font-style: italic;
+            margin: 0 0 25px 0;
+            text-align: left;
+
+        }
+
+        h4 {
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            color: #63666a;
+            font-size: 1.5em;
+            letter-spacing: .06em;
+            font-style: italic;
+            margin: 0 0 25px 0;
+        }
+
+        p {
+            text-indent: 2.0em;
+            font-size: 1.15em;
+            line-height: 1.8em;
+            margin: 0 0 25px 0;
+        }
+
+        a {
+            color: #15397f;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            padding: 0px 20px 4px 20px;
+            /* font-size: 0.96em; */
+            line-height: 1.6em;
+            color: #63666a;
+        }
+
+        li {
+            margin: 10px 0
+        }
+
+        #map {
+            width: 100%;
+            margin: 0px auto;
+
+        }
+
+        .max-image-width {
+            width: 100%;
+        }
+
+        /* add custom style class here */
+
+
+        img {
+            border: 10px solid #777978
+        }
+
+        .linkbox {
+            margin: 3px 0 20px 0;
+            display: block;
+            font-weight: 300;
+        }
+
+        hr {
+            border: 0px;
+            border-bottom: 1px solid #3d3d3d;
+            padding-top: 20px;
+        }
+
+        /* Use float property to make two-column layout */
+
+        .first-column {
+            float: left;
+            width: 48%;
+            padding-right: 20px;
+        }
+
+        .column {
+            float: left;
+            width: 48%;
+        }
+
+        /* Clear floats after the columns */
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .svg-title {
+
+            display: inline-block;
+            width: 75px;
+            margin: -8px 10px -8px 0;
+        }
+
+        /* When browser is 800px wide or less */
+
+        @media screen and (max-width: 800px) {
+
+            .first-column,
+            .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <iframe src="map.html" width="100%" height="440px"></iframe>
+    <section>
+        <a href="map.html">Full-screen version</a>
+
+        <h1>Moloka'i: The Hawaiian Islands' Longest Continuous Fringing Reef</h1>
+        <h2>By Nathaniel Deaton</h2>
+        <div class="row">
+            <div class="first-column">
+                <p>
+                    Moloka'i Island is home to the longest continuous fringing reef among those within the Hawaiian
+                    Archipelago. The island and reef
+                    are traditionally venerated by many Native Hawaiians and consider Hina, the Goddess of Fisherman, to
+                    have given birth to the coral reefs subsequent
+                    marine wildlife. It's easy to see why fishermen of Moloka'i built many artificial fishponds on the
+                    shallow reef beds. The wide expanse of these
+                    ecosystems provided ample sustenance to the local population and fed into increasing importance that
+                    Hinaalo had over as the Mother Goddess of the
+                    Hawaiian people.
+                </p>
+                <p>
+                    Marine scientists often classify reefs in one of three categories. They include barrier, fringe, and
+                    atoll formations.
+                    Barrier and fringing reefs are similar in that they both grow seaword and retain border definitions
+                    similar to the surrounding
+                    island coastlines. Although both barrier and fringing reefs share this trait, <i>barrier reefs</i>
+                    are further separated by the
+                    shoreline by a larger expanse of water whereas fringing reefs typically hug the shoreline and slope
+                    upwards into beaches. The reef
+                    to the furthest east of Moloka'i turns into Murphy Beach - a popular destination among snorkelers
+                    and thrill-seeking surfer bros.
+                </p>
+                <p>
+                    Thanks goes to the National Oceanic and Atmospheric Administration (NOAA) for providing the survey
+                    rasters for the bathymetry in the
+                    Hawaiian Islands via <a href="https://maps.ngdc.noaa.gov/viewers/bathymetry/"> NOAA's Bathymetric
+                        Data Viewer.</a> Reef names were extracted via OpenStreetMap.
+                    Data accessed December, 2020.
+                </p>
+                <h3>Tools used in this project</h3>
+                <ul>
+                    <li>PostGIS was used to store/query the national dataset.</li>
+                    <li>Data is shown on Mapbox web map with geolocation services enabled. If the map got popular it
+                        would require a fee to use.</li>
+                    <li>GDAL and QGIS 3.2 to convert raster elevation units and create contours.</li>
+                </ul>
+
+
+                <hr>
+                <h3>Project assets</h3>
+                <ul>
+                    <li><a href="lesson-template/molokaiReefs/molokaiReefs2.geojson"> Moloka'i Reefs GeoJSON </li>
+                    <li><a href="lesson-template/molokaiReefs/selectedMnts5.geojson"> Moloka'i Mountains GeoJSON </a>
+                    </li>
+
+                    <!-- <li><a href="arches_us.geojson" download>point locations GeoJSON</a></li>-->
+                </ul>
+                </p>
+
+                <h4>Project Citations</h4>
+                <ul>
+                    <li><a
+                            href="https://www.usgs.gov/centers/pcmsc/science/coral-reef-project-moloka-i?qt-science_center_objects=0#qt-science_center_objects">
+                            USGS Coral Reef Project: Moloka'i></a> </li>
+                    <li><a
+                            href="http://cramp.wcc.hawaii.edu/Watershed_Files/Molokai/WS_Molokai_molokai_SouthMolokai.htm">
+                            Coral Reef Assessment & Management Program Hawaii</a></li>
+                    <li><a href="https://pubs.usgs.gov/sir/2007/5101/"> USGS Scientific Investigations Report 2007-5101
+                            Edited by Michael Field et al</i></a></li>
+                </ul>
+
+
+
+            </div>
+            <div class="column"> 
+                <img src="../molokaiReefs/molokai.jpg" class="Molokai" >
+                
+                <div class="linkbox"><i>Photograph provided by Levanya Sunkara  </div>
+
+            </div>
+        </div>
+
+
+        <hr>
+        <!-- <h4><a href="https://uky-gis.github.io">UKy GIS and Mapping</a></h4> -->
+        <a href="https://uky-gis.github.io">
+            <img src="logo-color-400px.png" alt="Uinversity of Kentucky Geography"></a>
+    </section>
+</body>
+
+</html>
